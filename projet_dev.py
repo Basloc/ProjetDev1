@@ -10,7 +10,7 @@ try :
     mail_server = smtplib.SMTP('smtp.gmail.com', 587)
     mail_server.ehlo()
     mail_server.starttls()
-    mail_server.login('bastienlocat@gmail.com', 'bhbl iddn plyk cfyr') # utiliser la cle generer en tant que mdp 
+    mail_server.login('bastienlocat@gmail.com', 'YourKey') # utiliser la cle generer en tant que mdp 
     mail_server.send_message(message)
     mail_server.quit()
     
